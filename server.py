@@ -2,12 +2,22 @@ import web
 from database import Db
 from navbar import Navbar
 from artist import Artist
+from genre import Genre
+from employee import Employee
+from invoice import Invoice
+from album import Album
+
 
 web.config.debug = True
 
 urls = (
     '/', 'index',
-    '/artist', 'Artist'
+    '/artist', 'Artist',
+    '/genre', 'Genre',
+    '/employee', 'Employee',
+    '/invoice', 'Invoice'
+    '/album', 'Album'
+
 )
 
 class index:

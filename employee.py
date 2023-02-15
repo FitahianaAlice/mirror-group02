@@ -8,33 +8,31 @@ urls = (
     '/', 'index',
     '/artist', 'Artist',
     '/genre', 'Genre',
-    '/employee', 'Employee',
-    '/invoice', 'Invoice'
+    '/employee', 'Employee'
 )
 
-class Artist:
+class Employee:
     def GET(self):
         navbar = Navbar()
         navbar_html = navbar.get_navbar()
         d = Db()
         db = d.getDb()
-        artists = db.select('Artist', limit=8)
+        a2=db.select('Album', limit=8)
+        employe=db.select('Employee', limit=8)
         result = navbar_html
-        result += '<div class="container-fluid">'
+        result += '<div class="container">'
         result += '<table class="table table-border">'
         result += '<thead class="bg-primary text-white">'
         result += '<tr>'
-        result += '<th>#</th>'
-        result += '<th>Artist Name</th>'
+        result += '<th>Employee</th>'
         result += '</tr>'
         result += '</thead>'
         result += '<tbody>'
-        for artist in artists:
-            albums = db.select('Album', where='ArtistId=$id', vars={'id': artist.ArtistId})
+        for a in a2:
             result += '<tr>'
-            result += '<td class="bg-dark text-white text-center">' + str(artist.ArtistId) + '</td>'
-            result += '<td>' + artist.Name + '</td>'
-            result += '</tr>'
+            for employee in employe:
+                result += '<td>' +employee.LastName+'</td>'
+                break
         result += '</tbody>'
         result += '</table>'
         result += '</div>'

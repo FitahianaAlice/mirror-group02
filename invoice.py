@@ -12,29 +12,28 @@ urls = (
     '/invoice', 'Invoice'
 )
 
-class Artist:
+class Invoice:
     def GET(self):
         navbar = Navbar()
         navbar_html = navbar.get_navbar()
         d = Db()
         db = d.getDb()
-        artists = db.select('Artist', limit=8)
+        a2=db.select('Album', limit=8)
+        invc=db.select('Invoice', limit=8)
         result = navbar_html
-        result += '<div class="container-fluid">'
+        result += '<div class="container">'
         result += '<table class="table table-border">'
         result += '<thead class="bg-primary text-white">'
         result += '<tr>'
-        result += '<th>#</th>'
-        result += '<th>Artist Name</th>'
+        result += '<th>Invoice</th>'
         result += '</tr>'
         result += '</thead>'
         result += '<tbody>'
-        for artist in artists:
-            albums = db.select('Album', where='ArtistId=$id', vars={'id': artist.ArtistId})
+        for a in a2:
             result += '<tr>'
-            result += '<td class="bg-dark text-white text-center">' + str(artist.ArtistId) + '</td>'
-            result += '<td>' + artist.Name + '</td>'
-            result += '</tr>'
+            for invoice in invc:
+                result += '<td>' +invoice.BillingCity+'</td>' 
+                break
         result += '</tbody>'
         result += '</table>'
         result += '</div>'
