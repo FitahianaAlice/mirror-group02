@@ -22,7 +22,7 @@ class Genre:
         grs=db.select('Genre', limit=8)
         result = navbar_html
         result += '<div class="container">'
-        result += '<table class="table table-border">'
+        result += '<table class="table table-striped table-hover text-center w-75 m-auto rounded">'
         result += '<thead class="bg-primary text-white">'
         result += '<tr>'
         result += '<th>Genre</th>'
