@@ -20,8 +20,8 @@ class Artist:
         db = d.getDb()
         artists = db.select('Artist', limit=8)
         result = navbar_html
-        result += '<div class="container-fluid">'
-        result += '<table class="table table-border">'
+        result += '<div class="container">'
+        result += '<table class="table table-border w-50 m-auto">'
         result += '<thead class="bg-primary text-white">'
         result += '<tr>'
         result += '<th>#</th>'

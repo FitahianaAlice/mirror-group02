@@ -8,7 +8,8 @@ urls = (
     '/', 'index',
     '/artist', 'Artist',
     '/genre', 'Genre',
-    '/employee', 'Employee'
+    '/employee', 'Employee',
+    '/invoice', 'Invoice'
 )
 
 class Employee:

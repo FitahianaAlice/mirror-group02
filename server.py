@@ -15,7 +15,7 @@ urls = (
     '/artist', 'Artist',
     '/genre', 'Genre',
     '/employee', 'Employee',
-    '/invoice', 'Invoice'
+    '/invoice', 'Invoice',
     '/album', 'Album'
 
 )

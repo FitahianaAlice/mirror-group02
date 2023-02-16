@@ -7,7 +7,9 @@ web.config.debug = True
 urls = (
     '/', 'index',
     '/artist', 'Artist',
-    '/genre', 'Genre'
+    '/genre', 'Genre',
+    '/employee', 'Employee',
+    '/invoice', 'Invoice'
 )
 
 class Genre:
