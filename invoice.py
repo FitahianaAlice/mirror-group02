@@ -22,17 +22,17 @@ class Invoice:
         invc=db.select('Invoice', limit=8)
         result = navbar_html
         result += '<div class="container">'
-        result += '<table class="table table-border">'
+        result += '<table class="table table-border table-striped table-hover w-75 m-auto">'
         result += '<thead class="bg-primary text-white">'
         result += '<tr>'
-        result += '<th>Invoice</th>'
+        result += '<th class="text-center" >Invoice</th>'
         result += '</tr>'
         result += '</thead>'
         result += '<tbody>'
         for a in a2:
             result += '<tr>'
             for invoice in invc:
-                result += '<td>' +invoice.BillingCity+'</td>' 
+                result += '<td class="text-center">' +invoice.BillingCity+'</td>' 
                 break
         result += '</tbody>'
         result += '</table>'

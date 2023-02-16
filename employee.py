@@ -22,17 +22,17 @@ class Employee:
         employe=db.select('Employee', limit=8)
         result = navbar_html
         result += '<div class="container">'
-        result += '<table class="table table-border">'
+        result += '<table class="table table-border table-striped table-hover w-75 m-auto"">'
         result += '<thead class="bg-primary text-white">'
         result += '<tr>'
-        result += '<th>Employee</th>'
+        result += '<th class="text-center" >Employee</th>'
         result += '</tr>'
         result += '</thead>'
         result += '<tbody>'
         for a in a2:
             result += '<tr>'
             for employee in employe:
-                result += '<td>' +employee.LastName+'</td>'
+                result += '<td class="text-center" >' +employee.LastName+'</td>'
                 break
         result += '</tbody>'
         result += '</table>'
