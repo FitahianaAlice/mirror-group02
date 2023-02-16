@@ -21,11 +21,11 @@ class Artist:
         artists = db.select('Artist', limit=8)
         result = navbar_html
         result += '<div class="container">'
-        result += '<table class="table table-border w-50 m-auto">'
+        result += '<table class="table table-border w-75 m-auto">'
         result += '<thead class="bg-primary text-white">'
         result += '<tr>'
-        result += '<th>#</th>'
-        result += '<th>Artist Name</th>'
+        result += '<th class="text-center">#</th>'
+        result += '<th class="text-center">Artist Name</th>'
         result += '</tr>'
         result += '</thead>'
         result += '<tbody>'
@@ -33,7 +33,7 @@ class Artist:
             albums = db.select('Album', where='ArtistId=$id', vars={'id': artist.ArtistId})
             result += '<tr>'
             result += '<td class="bg-dark text-white text-center">' + str(artist.ArtistId) + '</td>'
-            result += '<td>' + artist.Name + '</td>'
+            result += '<td class="text-center">' + artist.Name + '</td>'
             result += '</tr>'
         result += '</tbody>'
         result += '</table>'
