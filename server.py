@@ -7,6 +7,7 @@ from employee import Employee
 from invoice import Invoice
 from album import Album
 from invoiceLine import InvoiceLine 
+from mediaType import MediaType
 
 
 web.config.debug = True
@@ -18,7 +19,8 @@ urls = (
     '/employee', 'Employee',
     '/invoice', 'Invoice',
     '/album', 'Album',
-    '/invoiceLine', 'InvoiceLine'
+    '/invoiceLine', 'InvoiceLine',
+    '/mediaType', 'MediaType'
 
 )
 
